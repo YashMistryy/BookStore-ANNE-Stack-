@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row d-flex justify-content-between align-items-center pt-3 pb-2 border border-dark">
+        <h2>ALL BOOKS</h2>
+        <div class="table-responsive  position-relative">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">ISBN</th>
+                        <th scope="col">TITLE</th>
+                        <th scope="col">PRICE</th>
+                        <th scope="col">DATE OF RELEASE</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let book of bookList;let i = index " >
+                        <td style="font-weight: bold;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">{{book.isbn}}</td>
+                        <td style="font-weight: bold;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">{{book.title}}</td>
+                        <td style="font-weight: bold;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">{{book.price}}</td>
+                        <td style="font-weight: bold;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">{{book.dateOfRelease}}</td>
+                        <td><button class ="btn btn-sm btn-primary pt-1" routerLink="/edit-book/{{book.isbn}}">EDIT</button></td>
+                        <td><button class ="btn btn-sm btn-danger pt-1" (click)="deleteBook(book.isbn,i)">DELETE</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

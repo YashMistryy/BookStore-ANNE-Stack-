@@ -1,0 +1,29 @@
+
+<div class="row justify-content-center mt-9">
+<div class="col-md-2">
+    <br><br><br>
+    <form [formGroup] = "bookForm" (ngSubmit) = "onSubmit()" >
+     <div class="form-group">
+        <label for="title">Book title</label><br>
+        <input type="text" formControlName = "title" required/><br>
+    </div>
+    <div class="form-group">
+        <label for="">ISBN</label><br>
+        <input type="number" formControlName = "isbn" required><br>
+    </div>
+    <div class="form-group">
+        <label for="">PRICE</label><br>
+        <input type="number" formControlName = "price" required><br>
+    </div>
+    <div class="form-group">
+        <label for="">Date Of Release</label><br>
+        <input type="text" formControlName = "dateOfRelease" required>
+    </div><br><br>
+        <button type="submit" class=" btn btn-primary btn-block">Add Book</button>
+        <!-- <input class=" btn btn-primary btn-block" type="submit" value="add book" > -->
+    
+    </form>
+</div>
+
+
+</div>

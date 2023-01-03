@@ -1,0 +1,88 @@
+
+<form method="post" action="/books/add-book">
+
+    <label for="">Book title</label><br>
+    <input type="text" name="title"><br>
+    <label for="">ISBN</label><br>
+    <input type="number" name="isbn"><br>
+    <label for="">PRICE</label><br>
+    <input type="number" name="price"><br>
+    <label for="">Date Of Release</label><br>
+    <input type="text" name="dateOfRelease"><br>
+
+    <input type="submit" value="add book" >
+   
+
+</form>
+<br>
+<h2>update a book</h2>
+<form method="post" action="/books/update-book">
+
+    <label for="">Book title</label><br>
+    <input type="text" name="title"><br>
+    <label for="">ISBN</label><br>
+    <input type="number" name="isbn"><br>
+    <label for="">PRICE</label><br>
+    <input type="number" name="price"><br>
+    <label for="">Date Of Release</label><br>
+    <input type="text" name="dateOfRelease"><br>
+
+    <input type="submit" value="update book" >
+   
+
+</form>
+delete book
+<form method="post" action="/books/delete-book">
+    <label for="">Enter isbn number</label>
+    <input type="number" name="isbn">
+    <input type="submit" value="search_book">
+</form>
+
+
+
+
+
+<h1>BOOKLIST</h1>
+<table style="border: 2px solid black; ">
+    <tr  style="border: 2px solid black; ">
+        <% books.forEach(function(book){ %>
+            <td  style="border: 2px solid black; "><%=book.title %></td>
+           <% } )%>
+           <% books.forEach(function(book){ %>
+            <td  style="border: 2px solid black; "><%=book.isbn %></td>
+           <% } )%>
+           <% books.forEach(function(book){ %>
+            <td  style="border: 2px solid black; "><%=book.price %></td>
+           <% } )%>
+           <% books.forEach(function(book){ %>
+            <td  style="border: 2px solid black; "><%=book.dateOfRelease %></td>
+           <% } )%>
+
+           <% books.forEach(function(book){ %>
+            <td>
+                <form action="post" action="/books/edit" >
+              <input type="submit" value="edit"></input></form>
+            </td>
+           <% } )%>
+    </tr>
+</table>
+<ul>
+    <% books.forEach(function(book){ %>
+        <li><%=book.title %></li>
+       <% } )%>
+</ul>
+<ul>
+    <% books.forEach(function(book){ %>
+        <li><%=book.isbn %></li>
+       <% } )%>
+</ul>
+<ul>
+    <% books.forEach(function(book){ %>
+        <li><%=book.price %>₹</li>
+       <% } )%>
+</ul>
+<ul>
+    <% books.forEach(function(book){ %>
+        <li><%=book.dateOfRelease %></li>
+       <% } )%>
+</ul>
